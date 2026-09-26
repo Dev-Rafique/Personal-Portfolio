@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState, type FormEvent } from "react";
+import { BriefcaseBusiness, Github, Linkedin, Mail, MapPin, Palette, Phone } from "lucide-react";
 import heroVideo from "@/assets/hero-intro.mp4";
 import imgWp from "@/assets/project-wordpress.jpg";
 import imgWoo from "@/assets/project-woocommerce.jpg";
@@ -8,7 +9,7 @@ import imgSeo from "@/assets/project-seo.jpg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Rafique — WordPress, CMS & Frontend Web Developer" },
+      { title: "Rafique — WordPress, Others CMS & Frontend Web Developer" },
       { name: "description", content: "Rafique builds fast, scalable, SEO-friendly websites with WordPress, CMS platforms and modern frontend. 5+ years experience." },
       { property: "og:title", content: "Rafique — Web Developer" },
       { property: "og:description", content: "Fast, scalable and user-focused websites. WordPress, CMS, frontend, troubleshooting and SEO." },
@@ -30,17 +31,17 @@ const stats = [
 ];
 
 const skills: [string, string[]][] = [
-  ["WordPress & CMS", ["WordPress", "Elementor", "Gutenberg", "WooCommerce", "ACF", "Theme customization"]],
+  ["WordPress", ["Elementor", "Gutenberg", "WooCommerce", "ACF", "Crocoblock", "Theme customization", "Plugin customization"]],
   ["Frontend", ["HTML5", "CSS3", "JavaScript", "React", "Tailwind", "Responsive design"]],
-  ["Development", ["PHP", "Custom plugins", "REST APIs", "Git", "MySQL"]],
-  ["Troubleshooting", ["Debugging", "Plugin conflicts", "Malware cleanup", "Migrations", "Server errors"]],
-  ["SEO", ["Technical SEO", "Core Web Vitals", "Schema", "On-page SEO", "Site speed"]],
+  ["Others CMS", ["Shopify", "Squarespace", "Wix", "Kajabi", "Webflow"]],
+  ["Troubleshooting", ["Debugging", "Plugin conflicts", "Malware cleanup", "Migrations", "Server errors", "Performance optimization", "Broken Layout Fixes"]],
+  ["SEO", ["Technical SEO", "Core Web Vitals", "Schema", "On-page SEO", "Local SEO", "Site speed"]],
 ];
 
 const services = [
   ["WordPress Development", "Custom themes and sites built to be easy to manage and quick to load."],
   ["Website Design & Redesign", "Clean, modern layouts that make your content and offer clear."],
-  ["WooCommerce Stores", "Online shops with smooth checkout, payments and product management."],
+  ["CMS Website Development", "Responsive, easy-to-manage websites built with leading CMS platforms."],
   ["Website Troubleshooting", "Broken layouts, errors, conflicts and slow pages — found and fixed."],
   ["Frontend Development", "Pixel-accurate, responsive interfaces from your designs."],
   ["SEO & Performance", "Technical SEO and speed work that helps pages rank and convert."],
@@ -59,9 +60,9 @@ const projects = [
 ];
 
 const experience = [
-  ["2023 — Present", "Freelance Web Developer", "WordPress builds, WooCommerce stores, troubleshooting and SEO for clients worldwide."],
-  ["2021 — 2023", "WordPress Developer, Agency", "Built and maintained client sites, custom themes and plugin integrations."],
-  ["2020 — 2021", "Frontend Developer", "Converted designs into responsive, accessible HTML/CSS/JS interfaces."],
+  ["2025 — Present", "WordPress & Frontend Developer - Roxnor", "Developing, customizing, and troubleshooting WordPress websites with modern frontend technologies."],
+  ["2022 — present", "Freelance Web Designer & Developer - Upwork", "Building responsive websites and custom web solutions using WordPress, Shopify, Kajabi, and other CMS platforms."],
+  ["2021 — 2025", "Wordpress Developer - Softvence Agency", "Developing and customizing responsive WordPress websites, themes, plugins, and WooCommerce solutions."],
 ];
 
 const steps = [
@@ -80,10 +81,16 @@ const why = [
 ];
 
 const socials = [
-  { label: "LinkedIn", href: "https://www.linkedin.com/in/rafique-hasan/" },
-  { label: "GitHub", href: "https://github.com/Dev-Rafique" },
-  { label: "Upwork", href: "https://www.upwork.com/freelancers/~0164c3d0401346c8" },
-  { label: "Behance", href: "https://www.behance.net/rafique" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/rafique-hasan/", icon: Linkedin },
+  { label: "GitHub", href: "https://github.com/Dev-Rafique", icon: Github },
+  { label: "Upwork", href: "https://www.upwork.com/freelancers/~0164c3d0401346c8", icon: BriefcaseBusiness },
+  { label: "Behance", href: "https://www.behance.net/rafique", icon: Palette },
+];
+
+const contactDetails = [
+  { label: "Phone", value: "+880 1788040911", href: "tel:+8801788040911", icon: Phone },
+  { label: "Email", value: "devrafiquehasan@gmail.com", href: "mailto:devrafiquehasan@gmail.com", icon: Mail },
+  { label: "Address", value: "123 Example Street, Dhaka, Bangladesh", href: "https://maps.google.com/?q=123+Example+Street+Dhaka+Bangladesh", icon: MapPin },
 ];
 
 function Section({ id, eyebrow, title, children, className = "" }: { id?: string; eyebrow: string; title: string; children: React.ReactNode; className?: string }) {
@@ -128,12 +135,12 @@ function Index() {
         <video src={heroVideo} autoPlay muted loop playsInline className="absolute inset-0 h-full w-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/70 to-background/10" />
         <div className="relative mx-auto w-full max-w-6xl px-5 pb-20 pt-32">
-          <p className="text-sm font-medium text-accent">Hi, I'm Rafique — Web Developer</p>
+          <p className="text-sm font-medium text-[oklch(0.4_0.18_28.35)]">Hi, I'm Rafique — Web Developer</p>
           <h1 className="mt-4 max-w-4xl text-4xl font-semibold leading-[1.08] md:text-6xl">
             Web Developer Building Fast, Scalable & User-Focused Websites
           </h1>
           <p className="mt-6 max-w-xl text-lg text-muted-foreground">
-            5 years building WordPress and CMS websites, clean frontends, fixing tricky issues and improving SEO.
+            5 years building WordPress and others CMS websites, clean frontends, fixing tricky issues and improving SEO.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <a href="#projects" className="rounded-md bg-primary px-6 py-3 text-sm font-medium text-primary-foreground">View My Work</a>
@@ -153,7 +160,7 @@ function Index() {
         </div>
       </div>
 
-      <Section id="about" eyebrow="About" title="A developer who cares about how websites work — and how they feel.">
+      <Section id="about" eyebrow="About" title="A developer who cares about how websites work- and how they feel.">
         <div className="grid items-center gap-8 lg:grid-cols-[1.1fr_0.9fr]">
           <div className="space-y-5 text-lg text-muted-foreground">
             <p>
@@ -161,12 +168,12 @@ function Index() {
               websites for businesses, agencies and individuals. Most of my work is in WordPress and other CMS platforms.
             </p>
             <p>
-              I focus on clean code, reliable performance and search-friendly structure — and I enjoy the
+              I focus on clean code, reliable performance and search-friendly structure- and I enjoy the
               detective work of fixing broken or slow websites.
             </p>
             <div className="flex flex-wrap gap-3 pt-2">
               <a href="#projects" className="rounded-md bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground">See My Work</a>
-              <a href="#contact" className="rounded-md border border-foreground/15 bg-background px-5 py-2.5 text-sm font-medium">Let's Talk</a>
+              <a href="https://drive.google.com/file/d/1kKEEyHj0qnUTAbyVeDzivLlpuhAuH1RV/view?usp=sharing" className="rounded-md border border-foreground/15 bg-background px-5 py-2.5 text-sm font-medium">Resume</a>
             </div>
           </div>
 
@@ -281,7 +288,29 @@ function Index() {
 
       <Section id="contact" eyebrow="Contact" title="Have a Website Project in Mind?">
         <div className="grid gap-10 md:grid-cols-2">
-          <p className="text-lg text-muted-foreground">Tell me a little about your project and I'll get back to you within a day or two.</p>
+          <div className="space-y-6">
+            <p className="text-lg text-muted-foreground">Tell me a little about your project and I'll get back to you within a day or two.</p>
+            <div className="grid gap-3">
+              {contactDetails.map(({ label, value, href, icon: Icon }) => (
+                <a key={label} href={href} className="flex min-w-0 items-center gap-4 rounded-md border border-border bg-card p-4 transition-colors hover:border-accent">
+                  <span className="grid size-10 shrink-0 place-items-center rounded-md border border-border text-accent">
+                    <Icon size={18} aria-hidden="true" />
+                  </span>
+                  <span className="min-w-0">
+                    <span className="block text-xs font-semibold uppercase tracking-wider text-muted-foreground">{label}</span>
+                    <span className="mt-1 block break-words text-sm font-medium">{value}</span>
+                  </span>
+                </a>
+              ))}
+            </div>
+            <div className="flex items-center gap-5">
+              {socials.map(({ label, href, icon: Icon }) => (
+                <a key={label} href={href} target="_blank" rel="noreferrer" aria-label={label} title={label} className="text-muted-foreground transition-colors hover:text-accent">
+                  <Icon size={20} aria-hidden="true" />
+                </a>
+              ))}
+            </div>
+          </div>
           {sent ? (
             <p className="rounded-lg border border-accent p-6">Thanks! Your message has been noted — I'll be in touch soon.</p>
           ) : (
