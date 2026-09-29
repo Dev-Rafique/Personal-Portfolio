@@ -5,6 +5,13 @@ import heroVideo from "@/assets/hero-intro.mp4";
 import imgWp from "@/assets/project-wordpress.jpg";
 import imgWoo from "@/assets/project-woocommerce.jpg";
 import imgSeo from "@/assets/project-seo.jpg";
+import wpProject1 from "@/assets/wpproject.png";
+import wpproject2 from "@/assets/wpproject23.png";
+import otherscmss from "@/assets/othersCms1.png";
+import Custom from "@/assets/custom.png";
+import custom2 from "@/assets/custom2.png";
+
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -40,23 +47,23 @@ const skills: [string, string[]][] = [
 
 const services = [
   ["WordPress Development", "Custom themes and sites built to be easy to manage and quick to load."],
-  ["Website Design & Redesign", "Clean, modern layouts that make your content and offer clear."],
+  ["Frontend Development", "Pixel-accurate, responsive interfaces from your designs."],
   ["CMS Website Development", "Responsive, easy-to-manage websites built with leading CMS platforms."],
   ["Website Troubleshooting", "Broken layouts, errors, conflicts and slow pages — found and fixed."],
-  ["Frontend Development", "Pixel-accurate, responsive interfaces from your designs."],
-  ["SEO & Performance", "Technical SEO and speed work that helps pages rank and convert."],
+  ["CRM & Automation Specialist", "CRM setup, integrations, and workflow automation."],
+  ["SEO Specialist", "On-page, technical, and local SEO to improve rankings, traffic, and visibility."],
 ];
 
 const process = ["Reproduce", "Diagnose", "Isolate", "Fix", "Test", "Optimize"];
 
-const cats = ["All", "WordPress", "WooCommerce", "Elementor", "Frontend", "SEO", "Custom Development"];
+const cats = ["All", "WordPress", "Others CMS", "Frontend", "Custom Development", "SEO" ];
 const projects = [
-  { t: "Corporate WordPress Site", c: "WordPress", img: imgWp, d: "Custom theme with flexible page builder blocks." },
-  { t: "Fashion WooCommerce Store", c: "WooCommerce", img: imgWoo, d: "Store rebuild with faster checkout." },
-  { t: "SEO & Speed Overhaul", c: "SEO", img: imgSeo, d: "Core Web Vitals moved from red to green." },
-  { t: "Agency Landing Pages", c: "Elementor", img: imgWp, d: "Reusable Elementor templates for campaigns." },
-  { t: "React Marketing Site", c: "Frontend", img: imgSeo, d: "Responsive frontend from Figma designs." },
-  { t: "Booking Plugin", c: "Custom Development", img: imgWoo, d: "Custom plugin for appointment booking." },
+  { t: "Built for Car Enthusiasts", c: "WordPress", img: Custom, url: "", d: "Custom builds, mods, and car culture." },
+  { t: "Designed for Growth", c: "WordPress", img: imgWp, url: "", d: "Strategic, user-focused websites that drive results." },
+  { t: "SEO & Speed Overhaul", c: "SEO", img: imgSeo, url: "", d: "Core Web Vitals moved from red to green." },
+  { t: "Designed to Perform", c: "Others CMS", img: wpproject2, url: "", d: "Modern, responsive, conversion-focused websites." },
+  { t: "Built to Convert", c: "Frontend", img: wpProject1, url: "", d: "Bold, responsive, conversion-focused websites." },
+  { t: "Fashion WooCommerce Store", c: "Custom Development", img: imgWoo, url: "", d: "Store rebuild with faster checkout." },
 ];
 
 const experience = [
@@ -238,6 +245,9 @@ function Index() {
       </Section>
 
       <Section id="projects" eyebrow="Projects" title="Selected work.">
+        <p className="-mt-5 mb-8 max-w-2xl text-base text-muted-foreground">
+          A few examples of responsive, conversion-focused builds I’ve created for WordPress, CMS, and custom frontend work.
+        </p>
         <div className="mb-8 flex flex-wrap gap-2">
           {cats.map((c) => (
             <button key={c} onClick={() => setCat(c)} className={`rounded-full border px-4 py-1.5 text-sm transition-colors ${cat === c ? "border-primary bg-primary text-primary-foreground" : "border-border hover:border-foreground"}`}>{c}</button>
@@ -251,6 +261,18 @@ function Index() {
                 <p className="text-xs uppercase tracking-wider text-accent">{p.c}</p>
                 <h3 className="mt-1 font-semibold">{p.t}</h3>
                 <p className="mt-1 text-sm text-muted-foreground">{p.d}</p>
+                <a
+                  href={p.url || "#projects"}
+                  target={p.url ? "_blank" : undefined}
+                  rel={p.url ? "noreferrer" : undefined}
+                  className={`mt-4 inline-flex rounded-md border px-3 py-1.5 text-xs font-medium transition-colors ${
+                    p.url
+                      ? "border-border text-foreground hover:border-accent"
+                      : "pointer-events-none cursor-default border-border/60 text-muted-foreground opacity-70"
+                  }`}
+                >
+                  {p.url ? "Visit Site" : "Project Details"}
+                </a>
               </div>
             </article>
           ))}
