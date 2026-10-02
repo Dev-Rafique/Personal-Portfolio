@@ -1,6 +1,15 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState, type FormEvent } from "react";
-import { BriefcaseBusiness, Github, Linkedin, Mail, MapPin, Palette, Phone } from "lucide-react";
+import {
+  BriefcaseBusiness,
+  Github,
+  Instagram,
+  Linkedin,
+  Mail,
+  MapPin,
+  Palette,
+  Phone,
+} from "lucide-react";
 import heroVideo from "@/assets/hero-intro.mp4";
 import imgWp from "@/assets/project-wordpress.jpg";
 import imgWoo from "@/assets/project-woocommerce.jpg";
@@ -16,10 +25,10 @@ import custom2 from "@/assets/custom2.png";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Rafique — WordPress, Others CMS & Frontend Web Developer" },
-      { name: "description", content: "Rafique builds fast, scalable, SEO-friendly websites with WordPress, CMS platforms and modern frontend. 5+ years experience." },
+      { title: "Rafique — WordPress, Others CMS & Frontend Developer" },
+      { name: "description", content: "Rafique builds fast, scalable, SEO-friendly websites with WordPress, Others CMS platforms and modern frontend. 5+ years experience." },
       { property: "og:title", content: "Rafique — Web Developer" },
-      { property: "og:description", content: "Fast, scalable and user-focused websites. WordPress, CMS, frontend, troubleshooting and SEO." },
+      { property: "og:description", content: "Fast, scalable and user-focused websites. WordPress, Others CMS, frontend, troubleshooting and SEO." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -89,15 +98,16 @@ const why = [
 
 const socials = [
   { label: "LinkedIn", href: "https://www.linkedin.com/in/rafique-hasan/", icon: Linkedin },
+  { label: "Instagram", href: "https://www.instagram.com/rofik__hasan/", icon: Instagram },
   { label: "GitHub", href: "https://github.com/Dev-Rafique", icon: Github },
   { label: "Upwork", href: "https://www.upwork.com/freelancers/~0164c3d0401346c8", icon: BriefcaseBusiness },
   { label: "Behance", href: "https://www.behance.net/rafique", icon: Palette },
 ];
 
 const contactDetails = [
-  { label: "Phone", value: "+880 1788040911", href: "tel:+8801788040911", icon: Phone },
+  { label: "WhatsApp", value: "+880 1788040911", href: "https://wa.me/8801788040911", icon: Phone },
   { label: "Email", value: "devrafiquehasan@gmail.com", href: "mailto:devrafiquehasan@gmail.com", icon: Mail },
-  { label: "Address", value: "123 Example Street, Dhaka, Bangladesh", href: "https://maps.google.com/?q=123+Example+Street+Dhaka+Bangladesh", icon: MapPin },
+  { label: "Address", value: "1214 Mirpur, Dhaka, Bangladesh", href: "https://maps.google.com/?q=123+Example+Street+Dhaka+Bangladesh", icon: MapPin },
 ];
 
 function Section({ id, eyebrow, title, children, className = "" }: { id?: string; eyebrow: string; title: string; children: React.ReactNode; className?: string }) {
