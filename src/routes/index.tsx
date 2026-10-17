@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState, type FormEvent } from "react";
 import {
+  ArrowUpRight,
   BriefcaseBusiness,
   Github,
   Instagram,
@@ -19,6 +20,7 @@ import wpproject2 from "@/assets/wpproject23.png";
 import otherscmss from "@/assets/othersCms1.png";
 import Custom from "@/assets/custom.png";
 import custom2 from "@/assets/custom2.png";
+import profileImage from "@/assets/profile.jpg";
 
 
 
@@ -110,12 +112,17 @@ const contactDetails = [
   { label: "Address", value: "1214 Mirpur, Dhaka, Bangladesh", href: "https://maps.google.com/?q=123+Example+Street+Dhaka+Bangladesh", icon: MapPin },
 ];
 
-function Section({ id, eyebrow, title, children, className = "" }: { id?: string; eyebrow: string; title: string; children: React.ReactNode; className?: string }) {
+function Section({ id, eyebrow, title, children, className = "", action }: { id?: string; eyebrow: string; title: string; children: React.ReactNode; className?: string; action?: React.ReactNode }) {
   return (
     <section id={id} className={`scroll-mt-20 border-t border-border py-20 md:py-28 ${className}`}>
       <div className="mx-auto max-w-6xl px-5">
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">{eyebrow}</p>
-        <h2 className="mt-3 max-w-2xl text-3xl font-semibold md:text-4xl">{title}</h2>
+        <div className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">{eyebrow}</p>
+            <h2 className="mt-3 max-w-2xl text-3xl font-semibold md:text-4xl">{title}</h2>
+          </div>
+          {action}
+        </div>
         <div className="mt-12">{children}</div>
       </div>
     </section>
@@ -148,20 +155,46 @@ function Index() {
       </header>
 
       {/* Hero */}
-      <section className="relative flex min-h-[92vh] items-end overflow-hidden">
-        <video src={heroVideo} autoPlay muted loop playsInline className="absolute inset-0 h-full w-full object-cover" />
+      <section className="relative flex min-h-[92vh] items-center overflow-hidden">
+        <video
+          src={heroVideo}
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 h-full w-full object-cover"
+        />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/70 to-background/10" />
-        <div className="relative mx-auto w-full max-w-6xl px-5 pb-20 pt-32">
-          <p className="text-sm font-medium text-[oklch(0.4_0.18_28.35)]">Hi, I'm Rafique — Web Developer</p>
-          <h1 className="mt-4 max-w-4xl text-4xl font-semibold leading-[1.08] md:text-6xl">
-            Web Developer Building Fast, Scalable & User-Focused Websites
-          </h1>
-          <p className="mt-6 max-w-xl text-lg text-muted-foreground">
-            5 years building WordPress and others CMS websites, clean frontends, fixing tricky issues and improving SEO.
-          </p>
-          <div className="mt-8 flex flex-wrap gap-3">
-            <a href="#projects" className="rounded-md bg-primary px-6 py-3 text-sm font-medium text-primary-foreground">View My Work</a>
-            <a href="#contact" className="rounded-md border border-foreground/20 bg-background/60 px-6 py-3 text-sm font-medium backdrop-blur">Let's Work Together</a>
+        <div className="relative mx-auto grid w-full max-w-6xl items-center gap-12 px-5 pb-20 pt-32 lg:grid-cols-[minmax(0,1fr)_18rem]">
+          <div>
+            <p className="text-sm font-medium text-[oklch(0.4_0.18_28.35)]">
+              Hi, I'm Rafique — Web Developer
+            </p>
+            <h1 className="mt-4 max-w-4xl text-4xl font-semibold leading-[1.08] md:text-6xl">
+              Web Developer Building Fast, Scalable & User-Focused Websites
+            </h1>
+            <p className="mt-6 max-w-xl text-lg text-muted-foreground">
+              5 years building WordPress and others CMS websites, clean frontends, fixing tricky issues and improving SEO.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <a
+                href="#projects"
+                className="rounded-md bg-primary px-6 py-3 text-sm font-medium text-primary-foreground"
+              >
+                View My Work
+              </a>
+              <a
+                href="#contact"
+                className="rounded-md border border-foreground/20 bg-background/60 px-6 py-3 text-sm font-medium backdrop-blur"
+              >
+                Let's Work Together
+              </a>
+            </div>
+          </div>
+          <div className="hero-profile-ring relative mx-auto aspect-square w-52 rounded-full p-1.5 sm:w-64 lg:w-72">
+            <div className="relative h-full w-full overflow-hidden rounded-full border-4 border-background bg-card">
+              <img src={profileImage} alt="Rafique Hasan" className="h-full w-full object-cover" />
+            </div>
           </div>
         </div>
       </section>
@@ -254,7 +287,22 @@ function Index() {
         </div>
       </Section>
 
-      <Section id="projects" eyebrow="Projects" title="Selected work.">
+      <Section
+        id="projects"
+        eyebrow="Projects"
+        title="Selected work."
+        action={
+          <a
+            href="https://rafique.great-site.net/"
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex shrink-0 items-center gap-2 rounded-md bg-primary px-5 py-3 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-85"
+          >
+            See more work
+            <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
+          </a>
+        }
+      >
         <p className="-mt-5 mb-8 max-w-2xl text-base text-muted-foreground">
           A few examples of responsive, conversion-focused builds I’ve created for WordPress, CMS, and custom frontend work.
         </p>

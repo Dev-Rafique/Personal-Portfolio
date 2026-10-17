@@ -147,3 +147,34 @@
 
 html{scroll-behavior:smooth}
 h1,h2,h3,h4{font-family:var(--font-display);letter-spacing:-0.02em}
+
+@keyframes hero-profile-rgb-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.hero-profile-ring::before {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: conic-gradient(
+    from 0deg,
+    #ff1744,
+    #ff9100,
+    #ffea00,
+    #00e676,
+    #00e5ff,
+    #2979ff,
+    #d500f9,
+    #ff1744
+  );
+  content: "";
+  animation: hero-profile-rgb-spin 5s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-profile-ring::before {
+    animation: none;
+  }
+}
